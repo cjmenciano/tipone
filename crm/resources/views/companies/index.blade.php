@@ -2,7 +2,7 @@
 
 @section('content')
     <h1 class="display-4">Company Lists</h1>
-    @if(!Auth::guest())
+    @if(!Auth::guard('admin'))
         <a class="btn btn-info btn-lg" href="/companies/create" role="button">Add Company</a>
     @endif
         <hr/>

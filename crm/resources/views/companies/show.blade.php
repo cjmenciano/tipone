@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div><hr/>
-        @if(!Auth::guest())
+        @if(!Auth::guard('admin'))
         <div class="btn-group mr-2" role="group" aria-label="First group">
             <a href="/companies/{{$companies->id}}/edit" class="btn btn-info">Edit</a>
         </div>
