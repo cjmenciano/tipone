@@ -13,10 +13,11 @@ class EmployeesController extends Controller
      *
      * @return void
      */
-    /*public function __construct()
+
+    public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
-    }*/
+        $this->middleware('auth:admin', ['except' => ['index', 'show']]);
+    }
     
     /**
      * Display a listing of the resource.

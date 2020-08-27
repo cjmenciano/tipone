@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div><hr/>
-        @if(!Auth::guard('admin'))
+        @auth('admin')
         <div class="btn-group mr-2" role="group" aria-label="First group">
             <a href="/companies/{{$companies->id}}/edit" class="btn btn-info">Edit</a>
         </div>
@@ -36,5 +36,5 @@
                 {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
             {!! Form::close() !!}
         </div>
-        @endif
+        @endauth
 @endsection

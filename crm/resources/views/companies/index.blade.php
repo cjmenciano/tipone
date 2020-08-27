@@ -2,9 +2,9 @@
 
 @section('content')
     <h1 class="display-4">Company Lists</h1>
-    @if(!Auth::guard('admin'))
-        <a class="btn btn-info btn-lg" href="/companies/create" role="button">Add Company</a>
-    @endif
+        @auth('admin')
+            <a class="btn btn-info btn-lg" href="/companies/create" role="button">Add Company</a>
+        @endauth
         <hr/>
             @if(count($companies) > 0)
                 @foreach($companies as $company)

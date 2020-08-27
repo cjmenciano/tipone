@@ -11,7 +11,17 @@ use App\Employee;
 use Auth;
 
 class CompaniesController extends Controller
-{    
+{   
+     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:admin', ['except' => ['index', 'show']]);;
+    }
+
     /**
      * Display a listing of the resource.
      *

@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<a class="btn btn-secondary btn-lg" href="/employees" role="button">Go back</a><hr/>
     <h1 class="display-4">Employee Details</h1>
-        <a class="btn btn-secondary btn-lg" href="/employees" role="button">Go back</a><hr/>
             <div class="well">
                 <div class="row">
                     <div class="col-md-8 col-sm-8">
@@ -13,7 +13,7 @@
                     </div>
                 </div>
             </div><hr/>
-            @if(!Auth::guard('admin'))
+            @auth('admin')
                 <div class="btn-group mr-2" role="group" aria-label="First group">
                     <a href="/employees/{{$employees->id}}/edit" class="btn btn-info">Edit</a>
                 </div>
@@ -23,5 +23,5 @@
                         {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
                     {!! Form::close() !!}
                 </div>
-            @endif
+            @endauth
 @endsection
